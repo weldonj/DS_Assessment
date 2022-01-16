@@ -1,0 +1,10 @@
+format: jb-book
+root: Intro
+title: INTRODUCTION AND DESCRIPTION
+parts:
+- caption: Data Exploration
+  chapters:
+  - file: Exploration.ipynb
+- caption: Conclusion and Learning Outcomes
+  chapters:
+  - file: CONCLUSION
