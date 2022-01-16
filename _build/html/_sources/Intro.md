@@ -5,7 +5,6 @@ This Jupyter Book documents the analysis I performed based on the instructions p
 
 :::{note}
 Analysis of Experimental Results\
-
 Assignment\
 \
 The dataset provided is a collection of results and classifier parameters from experiments that were run on a single dataset. The dataset has three classes: Background, Tissue and Lesion. The goal for the classifiers was to correctly detect pixels in an image that belonged to these 3 classes, with a focus on Lesion.\
@@ -36,5 +35,4 @@ Binary class in this example is exactly the same as Lesions class, therefore can
 Each experiment is represented by a unique classifier name.\
 The results are represented using metrics such as Precision, Sensitivity, F1 score, MCC, DOR, TP, FP, FN, TN.\
 Parameters that are varied for the experiments are: model, dropoutFraction, AugmentColor, augmentGeo, balanceClasses, elasticDeformation. It is important to identify what are the effects on the results when those parameters are varied.
-
 :::
