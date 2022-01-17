@@ -278,6 +278,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tissue_absolute_best</span> <span class="o">=</span> <span class="n">tissue</span><span class="p">[[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;f1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">lesions_absolute_best</span> <span class="o">=</span> <span class="n">lesions</span><span class="p">[[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;f1&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tissue_models_mean</span> <span class="o">=</span> <span class="n">tissue</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;f1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">background_models_mean</span> <span class="o">=</span> <span class="n">background</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;f1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">lesions_models_mean</span> <span class="o">=</span> <span class="n">lesions</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;f1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
@@ -310,7 +318,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Overall_Model_Performance_6_0.png" src="_images/Overall_Model_Performance_6_0.png" />
+<img alt="_images/Overall_Model_Performance_7_0.png" src="_images/Overall_Model_Performance_7_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -320,8 +328,276 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Overall_Model_Performance_7_0.png" src="_images/Overall_Model_Performance_7_0.png" />
+<img alt="_images/Overall_Model_Performance_8_0.png" src="_images/Overall_Model_Performance_8_0.png" />
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tissue_absolute_best</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>model</th>
+      <th>f1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>784</th>
+      <td>Seg_Model</td>
+      <td>0.979781</td>
+    </tr>
+    <tr>
+      <th>373</th>
+      <td>Seg_Model</td>
+      <td>0.976506</td>
+    </tr>
+    <tr>
+      <th>787</th>
+      <td>Seg_Model</td>
+      <td>0.976038</td>
+    </tr>
+    <tr>
+      <th>778</th>
+      <td>Seg_Model</td>
+      <td>0.975923</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>Seg_Model</td>
+      <td>0.975733</td>
+    </tr>
+    <tr>
+      <th>772</th>
+      <td>Seg_Model</td>
+      <td>0.975628</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>Seg_Model</td>
+      <td>0.975467</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>Seg_Model</td>
+      <td>0.975064</td>
+    </tr>
+    <tr>
+      <th>424</th>
+      <td>Seg_Model</td>
+      <td>0.975007</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>Seg_Model</td>
+      <td>0.974966</td>
+    </tr>
+    <tr>
+      <th>496</th>
+      <td>Seg_Model</td>
+      <td>0.974925</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>Seg_Model</td>
+      <td>0.974784</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>Seg_Model</td>
+      <td>0.974640</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>Seg_Model</td>
+      <td>0.974571</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>Seg_Model</td>
+      <td>0.974521</td>
+    </tr>
+    <tr>
+      <th>760</th>
+      <td>Seg_Model</td>
+      <td>0.974300</td>
+    </tr>
+    <tr>
+      <th>640</th>
+      <td>Seg_Model</td>
+      <td>0.974263</td>
+    </tr>
+    <tr>
+      <th>430</th>
+      <td>Seg_Model</td>
+      <td>0.974232</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Seg_Model</td>
+      <td>0.974228</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>Seg_Model</td>
+      <td>0.974136</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lesions_absolute_best</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>model</th>
+      <th>f1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>320</th>
+      <td>Seg_Model</td>
+      <td>0.778314</td>
+    </tr>
+    <tr>
+      <th>656</th>
+      <td>Seg_Model</td>
+      <td>0.775863</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>Seg_Model</td>
+      <td>0.774564</td>
+    </tr>
+    <tr>
+      <th>437</th>
+      <td>Seg_Model</td>
+      <td>0.771905</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Seg_Model</td>
+      <td>0.771742</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>Seg_Model</td>
+      <td>0.769761</td>
+    </tr>
+    <tr>
+      <th>425</th>
+      <td>Seg_Model</td>
+      <td>0.766738</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>Seg_Model</td>
+      <td>0.766386</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>Seg_Model</td>
+      <td>0.765968</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>Seg_Model</td>
+      <td>0.765820</td>
+    </tr>
+    <tr>
+      <th>452</th>
+      <td>Seg_Model</td>
+      <td>0.763455</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>Seg_Model</td>
+      <td>0.763230</td>
+    </tr>
+    <tr>
+      <th>374</th>
+      <td>Seg_Model</td>
+      <td>0.761334</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>Seg_Model</td>
+      <td>0.758431</td>
+    </tr>
+    <tr>
+      <th>650</th>
+      <td>Seg_Model</td>
+      <td>0.758280</td>
+    </tr>
+    <tr>
+      <th>536</th>
+      <td>Seg_Model</td>
+      <td>0.757935</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>Seg_Model</td>
+      <td>0.757362</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>Seg_Model</td>
+      <td>0.756927</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>Seg_Model</td>
+      <td>0.755753</td>
+    </tr>
+    <tr>
+      <th>431</th>
+      <td>Seg_Model</td>
+      <td>0.755753</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -330,7 +606,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Overall_Model_Performance_8_0.png" src="_images/Overall_Model_Performance_8_0.png" />
+<img alt="_images/Overall_Model_Performance_11_0.png" src="_images/Overall_Model_Performance_11_0.png" />
 </div>
 </div>
 </div>

@@ -226,6 +226,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-lesion-classification">
+   Parameter effect on Lesion Classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-tissue-classification">
+   Parameter effect on Tissue Classification
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -238,6 +256,24 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-lesion-classification">
+   Parameter effect on Lesion Classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-tissue-classification">
+   Parameter effect on Tissue Classification
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -265,6 +301,7 @@
 </div>
 </div>
 </div>
+<p>Store a list of the model parameters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dropoutFraction&#39;</span><span class="p">,</span> <span class="s1">&#39;augmentColor&#39;</span><span class="p">,</span> <span class="s1">&#39;augmentGeometry&#39;</span><span class="p">,</span> <span class="s1">&#39;balanceClasses&#39;</span><span class="p">,</span> <span class="s1">&#39;elasticDeform&#39;</span><span class="p">]</span>
@@ -273,6 +310,7 @@
 </div>
 </div>
 </div>
+<p>Function to group by Model and Parameter so we can compare the impact on f1 score</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1_group</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
@@ -281,6 +319,9 @@
 </div>
 </div>
 </div>
+<p>Loop through the parameters and show which model + parameter combinations scored highest</p>
+<div class="section" id="parameter-effect-on-lesion-classification">
+<h2>Parameter effect on Lesion Classification<a class="headerlink" href="#parameter-effect-on-lesion-classification" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
@@ -388,6 +429,13 @@ Effect of &quot;elasticDeform&quot; on Lesion Classification
 </div>
 </div>
 </div>
+<p>We can see that for “dropoutFraction”, the models that have both 0.0 and 0.2 all performed better with a dropoutFraction of 0</p>
+<p>“augmentColor” set to FALSE with the Seg_Model model gives the overall best result, but for some other model TRUE outperforms FALSE</p>
+<p>“augmentGeometry” provides a significant improvement for the top performing models when set to TRUE</p>
+<p>Likewise, “elasticDeform” provides a signifcant improvement for the top performing models when set to TRUE</p>
+</div>
+<div class="section" id="parameter-effect-on-tissue-classification">
+<h2>Parameter effect on Tissue Classification<a class="headerlink" href="#parameter-effect-on-tissue-classification" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
@@ -492,6 +540,7 @@ Effect of &quot;elasticDeform&quot; on Tissue Classification
 13   DeepLabV3Plus          TRUE  0.951396
 12   DeepLabV3Plus         FALSE  0.950097
 </pre></div>
+</div>
 </div>
 </div>
 </div>

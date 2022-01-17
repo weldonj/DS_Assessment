@@ -257,6 +257,7 @@
 </div>
 </div>
 </div>
+<p>Reading in the file</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
@@ -281,6 +282,7 @@
 </div>
 </div>
 </div>
+<p>Quick look at what columns are in the dataset</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span>
@@ -305,6 +307,7 @@
 </div>
 </div>
 </div>
+<p>Check what classes there are</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -317,11 +320,10 @@
 </div>
 </div>
 </div>
+<p>Convert certain columns to numeric fields for calculations later on and use the sum of TP/FP/TN/FN to see how many total Pixels there are in the image dataset</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check total number of pixels</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;TN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;TN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -340,6 +342,7 @@
 </div>
 </div>
 </div>
+<p>Create separate dataframes for each class and check the size of these</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">background</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Background&#39;</span><span class="p">]</span>
@@ -356,6 +359,7 @@
 </div>
 </div>
 </div>
+<p>Creating some useful variables to describe the given dataset and also the image dataset that was classified</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_tissue_pixels</span> <span class="o">=</span> <span class="n">tissue</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">tissue</span><span class="p">[</span><span class="s1">&#39;FN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -369,6 +373,7 @@
 </div>
 </div>
 </div>
+<p>Output some details about the given dataset and also derived details about the image dataset the experimentation was performed on</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;Image Dataset Contains </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">total_pixels</span><span class="p">)</span><span class="si">}</span><span class="s1"> total Pixels</span><span class="se">\n</span><span class="s1"></span>
@@ -400,6 +405,7 @@ Experiment Dataset Contains 8 unique Models
 </div>
 </div>
 </div>
+<p>Quick check to see how difficult the three classes are to classify, looks like Lesions are the trickiest which makes sense</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tissue_f1_mean</span> <span class="o">=</span> <span class="n">tissue</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
