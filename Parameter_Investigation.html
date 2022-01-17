@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parameter Investigation &#8212; DS Assessment - John Weldon</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conclusion" href="CONCLUSION.html" />
+    <link rel="prev" title="Overall Model Performance" href="Overall_Model_Performance.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/tissue.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">DS Assessment - John Weldon</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Intro.html">
+   Data Scientist Assessment for Deciphex - John Weldon
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Exploration
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Exploration.html">
+   Data Exploration
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overall Model Performance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Overall_Model_Performance.html">
+   Overall Model Performance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parameter Investigation
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Parameter Investigation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Conclusion and Learning Outcomes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CONCLUSION.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Parameter_Investigation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Parameter_Investigation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Parameter Investigation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="parameter-investigation">
+<h1>Parameter Investigation<a class="headerlink" href="#parameter-investigation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;L2 Data Scientist Assessment - Data.csv&#39;</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">str</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;cp1252&#39;</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">background</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Background&#39;</span><span class="p">]</span>
+<span class="n">tissue</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Tissue&#39;</span><span class="p">]</span>
+<span class="n">lesions</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Lesions&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dropoutFraction&#39;</span><span class="p">,</span> <span class="s1">&#39;augmentColor&#39;</span><span class="p">,</span> <span class="s1">&#39;augmentGeometry&#39;</span><span class="p">,</span> <span class="s1">&#39;balanceClasses&#39;</span><span class="p">,</span> <span class="s1">&#39;elasticDeform&#39;</span><span class="p">]</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">background</span><span class="p">,</span> <span class="n">tissue</span><span class="p">,</span> <span class="n">lesions</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1_group</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="n">param</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;f1&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;f1&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Lesion Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f1_group</span><span class="p">(</span><span class="n">lesions</span><span class="p">,</span> <span class="n">param</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effect of &quot;dropoutFraction&quot; on Lesion Classification
+
+            model dropoutFraction        f1
+5  AE_InceptionV3               0  0.610407
+6  AE_InceptionV3             0.2  0.600812
+2         AE_FCN8               0  0.592926
+0        AE_FCN16               0  0.580614
+8     AE_Xception             0.2  0.533619
+3         AE_FCN8             0.2  0.527383
+1        AE_FCN16             0.2  0.469868
+7     AE_ResNet50             0.2  0.415154
+9   DeepLabV3Plus             0.2  0.394629
+4    AE_Inception             0.2  0.200791
+
+Effect of &quot;augmentColor&quot; on Lesion Classification
+
+             model augmentColor        f1
+14       Seg_Model        FALSE  0.689420
+15       Seg_Model         TRUE  0.667295
+7   AE_InceptionV3         TRUE  0.602410
+6   AE_InceptionV3        FALSE  0.600480
+2          AE_FCN8        FALSE  0.588557
+11     AE_Xception         TRUE  0.564246
+10     AE_Xception        FALSE  0.561992
+8      AE_ResNet50        FALSE  0.547993
+0         AE_FCN16        FALSE  0.518014
+12   DeepLabV3Plus        FALSE  0.473852
+3          AE_FCN8         TRUE  0.473663
+1         AE_FCN16         TRUE  0.451299
+4     AE_Inception        FALSE  0.399456
+9      AE_ResNet50         TRUE  0.390809
+13   DeepLabV3Plus         TRUE  0.117349
+5     AE_Inception         TRUE  0.002127
+
+Effect of &quot;augmentGeometry&quot; on Lesion Classification
+
+             model augmentGeometry        f1
+15       Seg_Model            TRUE  0.698797
+14       Seg_Model           FALSE  0.650329
+7   AE_InceptionV3            TRUE  0.622613
+6   AE_InceptionV3           FALSE  0.588972
+11     AE_Xception            TRUE  0.573835
+10     AE_Xception           FALSE  0.552564
+2          AE_FCN8           FALSE  0.533999
+3          AE_FCN8            TRUE  0.525012
+0         AE_FCN16           FALSE  0.501092
+8      AE_ResNet50           FALSE  0.495416
+1         AE_FCN16            TRUE  0.457102
+9      AE_ResNet50            TRUE  0.451518
+13   DeepLabV3Plus            TRUE  0.418922
+12   DeepLabV3Plus           FALSE  0.375195
+4     AE_Inception           FALSE  0.266304
+5     AE_Inception            TRUE  0.004254
+
+Effect of &quot;balanceClasses&quot; on Lesion Classification
+
+             model balanceClasses        f1
+15       Seg_Model           TRUE  0.698483
+7   AE_InceptionV3           TRUE  0.618703
+14       Seg_Model          FALSE  0.603410
+11     AE_Xception           TRUE  0.589197
+3          AE_FCN8           TRUE  0.582824
+1         AE_FCN16           TRUE  0.577522
+9      AE_ResNet50           TRUE  0.555180
+6   AE_InceptionV3          FALSE  0.547268
+10     AE_Xception          FALSE  0.485206
+13   DeepLabV3Plus           TRUE  0.479189
+2          AE_FCN8          FALSE  0.406423
+5     AE_Inception           TRUE  0.395086
+8      AE_ResNet50          FALSE  0.252259
+0         AE_FCN16          FALSE  0.240064
+12   DeepLabV3Plus          FALSE  0.225510
+4     AE_Inception          FALSE  0.136026
+
+Effect of &quot;elasticDeform&quot; on Lesion Classification
+
+             model elasticDeform        f1
+15       Seg_Model          TRUE  0.697685
+14       Seg_Model         FALSE  0.678046
+7   AE_InceptionV3          TRUE  0.612695
+6   AE_InceptionV3         FALSE  0.588063
+11     AE_Xception          TRUE  0.572370
+1         AE_FCN16          TRUE  0.571180
+3          AE_FCN8          TRUE  0.567975
+9      AE_ResNet50          TRUE  0.559030
+10     AE_Xception         FALSE  0.558105
+2          AE_FCN8         FALSE  0.504275
+13   DeepLabV3Plus          TRUE  0.467898
+0         AE_FCN16         FALSE  0.441181
+8      AE_ResNet50         FALSE  0.437948
+5     AE_Inception          TRUE  0.395086
+12   DeepLabV3Plus         FALSE  0.336014
+4     AE_Inception         FALSE  0.136026
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Tissue Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f1_group</span><span class="p">(</span><span class="n">tissue</span><span class="p">,</span> <span class="n">param</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effect of &quot;dropoutFraction&quot; on Tissue Classification
+
+            model dropoutFraction        f1
+2         AE_FCN8               0  0.967286
+5  AE_InceptionV3               0  0.963223
+6  AE_InceptionV3             0.2  0.962203
+0        AE_FCN16               0  0.962165
+8     AE_Xception             0.2  0.960235
+3         AE_FCN8             0.2  0.958992
+1        AE_FCN16             0.2  0.958715
+4    AE_Inception             0.2  0.956204
+7     AE_ResNet50             0.2  0.953572
+9   DeepLabV3Plus             0.2  0.950674
+
+Effect of &quot;augmentColor&quot; on Tissue Classification
+
+             model augmentColor        f1
+14       Seg_Model        FALSE  0.969611
+15       Seg_Model         TRUE  0.967337
+7   AE_InceptionV3         TRUE  0.963609
+11     AE_Xception         TRUE  0.963103
+6   AE_InceptionV3        FALSE  0.961291
+1         AE_FCN16         TRUE  0.961122
+10     AE_Xception        FALSE  0.960708
+3          AE_FCN8         TRUE  0.959982
+4     AE_Inception        FALSE  0.959272
+2          AE_FCN8        FALSE  0.958458
+0         AE_FCN16        FALSE  0.956034
+8      AE_ResNet50        FALSE  0.955463
+9      AE_ResNet50         TRUE  0.954544
+5     AE_Inception         TRUE  0.953135
+12   DeepLabV3Plus        FALSE  0.951479
+13   DeepLabV3Plus         TRUE  0.947857
+
+Effect of &quot;augmentGeometry&quot; on Tissue Classification
+
+             model augmentGeometry        f1
+15       Seg_Model            TRUE  0.970749
+14       Seg_Model           FALSE  0.965249
+7   AE_InceptionV3            TRUE  0.963862
+11     AE_Xception            TRUE  0.963012
+6   AE_InceptionV3           FALSE  0.961323
+10     AE_Xception           FALSE  0.960970
+3          AE_FCN8            TRUE  0.959658
+0         AE_FCN16           FALSE  0.959315
+2          AE_FCN8           FALSE  0.958802
+1         AE_FCN16            TRUE  0.958689
+8      AE_ResNet50           FALSE  0.957496
+4     AE_Inception           FALSE  0.957415
+5     AE_Inception            TRUE  0.952570
+9      AE_ResNet50            TRUE  0.951658
+12   DeepLabV3Plus           FALSE  0.950823
+13   DeepLabV3Plus            TRUE  0.950488
+
+Effect of &quot;balanceClasses&quot; on Tissue Classification
+
+             model balanceClasses        f1
+15       Seg_Model           TRUE  0.969909
+14       Seg_Model          FALSE  0.963894
+11     AE_Xception           TRUE  0.963619
+7   AE_InceptionV3           TRUE  0.962859
+3          AE_FCN8           TRUE  0.961516
+5     AE_Inception           TRUE  0.961513
+1         AE_FCN16           TRUE  0.961504
+6   AE_InceptionV3          FALSE  0.960371
+9      AE_ResNet50           TRUE  0.957454
+10     AE_Xception          FALSE  0.957108
+4     AE_Inception          FALSE  0.954434
+2          AE_FCN8          FALSE  0.954016
+13   DeepLabV3Plus           TRUE  0.953759
+0         AE_FCN16          FALSE  0.952928
+8      AE_ResNet50          FALSE  0.948130
+12   DeepLabV3Plus          FALSE  0.944505
+
+Effect of &quot;elasticDeform&quot; on Tissue Classification
+
+             model elasticDeform        f1
+15       Seg_Model          TRUE  0.969237
+14       Seg_Model         FALSE  0.968796
+11     AE_Xception          TRUE  0.963216
+6   AE_InceptionV3         FALSE  0.962448
+7   AE_InceptionV3          TRUE  0.962084
+1         AE_FCN16          TRUE  0.961837
+5     AE_Inception          TRUE  0.961513
+10     AE_Xception         FALSE  0.961311
+3          AE_FCN8          TRUE  0.960344
+2          AE_FCN8         FALSE  0.958528
+0         AE_FCN16         FALSE  0.957835
+9      AE_ResNet50          TRUE  0.957075
+4     AE_Inception         FALSE  0.954434
+8      AE_ResNet50         FALSE  0.954083
+13   DeepLabV3Plus          TRUE  0.951396
+12   DeepLabV3Plus         FALSE  0.950097
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Overall_Model_Performance.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Overall Model Performance</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="CONCLUSION.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conclusion</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
