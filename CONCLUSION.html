@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Data Exploration" href="Exploration.html" />
+    <link rel="prev" title="Parameter Investigation" href="Parameter_Investigation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,6 +104,30 @@
  <li class="toctree-l1">
   <a class="reference internal" href="Exploration.html">
    Data Exploration
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overall Model Performance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Overall_Model_Performance.html">
+   Overall Model Performance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parameter Investigation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Parameter_Investigation.html">
+   Parameter Investigation
   </a>
  </li>
 </ul>
@@ -195,8 +219,8 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-outcome">
-   Learning Outcome
+  <a class="reference internal nav-link" href="#recommendations">
+   Recommendations
   </a>
  </li>
 </ul>
@@ -225,8 +249,8 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-outcome">
-   Learning Outcome
+  <a class="reference internal nav-link" href="#recommendations">
+   Recommendations
   </a>
  </li>
 </ul>
@@ -240,16 +264,9 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="conclusion">
 <h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h1>
-<p>The takeaway message from the work that I did is that BERT is an excellent classifier for sentiment analysis. The results speak for themselves. If the review is short enough where BERT does not have a lot of text pruned at the start, it consistently outperforms the other models. Because most reviews contain a similar theme throughout, this pruning is often also not a big deal. However, ff the reviewer frontloads a positive review with the majority of the positive language BERT can fail to see the review as positive, and likewise if it frontloads a negative review with the majority of the negative language it can fail to see it as negative.</p>
-<p>Naive Bayes and Logistic Regression will not fall foul of this issues as they both examine every token in the review. What they fail to do, however, is pick up any kind of subtle context. While BERT also showed examples of this, it was able to handle it much more often than the others can. This is to be expected due to the way it has been trained.</p>
-<p>If a reviewer uses a lot of slang terms or just writes in an uncommon way, all three models can struggle. Again this is to be expected.</p>
-<p>The trade off between quality and training time was an interesting one. It’s difficult to decide what is the best choice for each use case, it would need to be considered by the user. The fastest version of the BERT model was still touching 90% accuracy, and far quicker to get through the 10 CV folds vs the the slowest version. It did come at the price of about 2 percentage points however. I would conclude that if time is not an issue, this latter version should be deployed but if the user is in any kind of a hurry, there is little harm in deploying the fastest version. The results will still be fairly excellent.</p>
-<p>If time or resources had allowed it, there were some further experiments that I wanted to run. I wanted to see the impact that increasing the batch size might have, but even moving from 10 to 12 was causing Colab to crash. I was also intrigued with the large version of BERT vs the base size that I was using but again I dind’t have the resources for this on the free version of Colab. Perhaps Colab pro would grant enough compute to run these experiments.</p>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="learning-outcome">
-<h1>Learning Outcome<a class="headerlink" href="#learning-outcome" title="Permalink to this headline">¶</a></h1>
-<p>I felt that I learned a lot from this assignment. Like other assignments where we essentially have to dive in and get out hands dirty, it was impossible not to learn new and useful things. It was nice getting to see the advantage that we would expect BERT to have over the previous models actually manifest in reality.</p>
-<p>I feel that as a result of this assignment, I would be confident in implementing some useful language models in industry.</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="recommendations">
+<h1>Recommendations<a class="headerlink" href="#recommendations" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -277,11 +294,11 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Exploration.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Parameter_Investigation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Data Exploration</p>
+            <p class="prev-next-title">Parameter Investigation</p>
         </div>
     </a>
 </div>
