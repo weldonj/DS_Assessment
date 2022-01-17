@@ -11,6 +11,6 @@ parts:
 - caption: Parameter Investigation
   chapters:
   - file: Parameter_Investigation.ipynb
-- caption: Conclusion and Learning Outcomes
+- caption: Conclusion and Recommendations
   chapters:
   - file: CONCLUSION
