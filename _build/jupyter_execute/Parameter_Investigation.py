@@ -21,6 +21,8 @@ tissue = data[data['class'] == 'Tissue']
 lesions = data[data['class'] == 'Lesions']
 
 
+# Store a list of the model parameters
+
 # In[25]:
 
 
@@ -28,12 +30,18 @@ parameters = ['dropoutFraction', 'augmentColor', 'augmentGeometry', 'balanceClas
 dfs = [background, tissue, lesions]
 
 
+# Function to group by Model and Parameter so we can compare the impact on f1 score
+
 # In[26]:
 
 
 def f1_group(df, param):
     return df.groupby(['model',param]).agg({'f1':'mean'}).reset_index().sort_values(by=['f1'], ascending=False)
 
+
+# Loop through the parameters and show which model + parameter combinations scored highest
+
+# ## Parameter effect on Lesion Classification
 
 # In[28]:
 
@@ -43,6 +51,18 @@ for param in parameters:
     print(f1_group(lesions, param))
     print()
 
+
+# We can see that for "dropoutFraction", the models that have both 0.0 and 0.2 all performed better with a dropoutFraction of 0
+# 
+# "augmentColor" set to FALSE with the Seg_Model model gives the overall best result, but for some other model TRUE outperforms FALSE
+# 
+# "augmentGeometry" provides a significant improvement for the top performing models when set to TRUE
+# 
+# Likewise, "elasticDeform" provides a signifcant improvement for the top performing models when set to TRUE        
+# 
+# 
+
+# ## Parameter effect on Tissue Classification
 
 # In[29]:
 

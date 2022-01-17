@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 from functools import reduce
 
 
+# Reading in the file
+
 # In[2]:
 
 
@@ -25,11 +27,15 @@ os.listdir()
 data = pd.read_csv('L2 Data Scientist Assessment - Data.csv', dtype = str, encoding = 'cp1252')
 
 
+# Quick look at what columns are in the dataset
+
 # In[4]:
 
 
 data.columns.values
 
+
+# Check what classes there are
 
 # In[5]:
 
@@ -37,10 +43,10 @@ data.columns.values
 data['class'].unique()
 
 
+# Convert certain columns to numeric fields for calculations later on and use the sum of TP/FP/TN/FN to see how many total Pixels there are in the image dataset
+
 # In[6]:
 
-
-# check total number of pixels
 
 data['TP'] = data['TP'].astype(int)
 data['FP'] = data['FP'].astype(int)
@@ -54,6 +60,8 @@ data['Check'] = data['TP'] + data['FP'] + data['TN'] + data['FN']
 data['Check'].unique()
 
 
+# Create separate dataframes for each class and check the size of these
+
 # In[7]:
 
 
@@ -63,6 +71,8 @@ lesions = data[data['class'] == 'Lesions']
 
 len(background), len(tissue), len(lesions)
 
+
+# Creating some useful variables to describe the given dataset and also the image dataset that was classified 
 
 # In[8]:
 
@@ -75,6 +85,8 @@ total_classifiers = len(data['classifier'].unique())
 total_models = len(data['model'].unique())
 total_experiments = len(data)
 
+
+# Output some details about the given dataset and also derived details about the image dataset the experimentation was performed on
 
 # In[9]:
 
@@ -90,6 +102,8 @@ Experiment Dataset Contains {total_classifiers} unique Classifiers
 Experiment Dataset Contains {total_models} unique Models''')
 
 
+# Quick check to see how difficult the three classes are to classify, looks like Lesions are the trickiest which makes sense
+
 # In[10]:
 
 
@@ -98,10 +112,4 @@ background_f1_mean = background['f1'].mean()
 lesions_f1_mean = lesions['f1'].mean()
 
 background_f1_mean, tissue_f1_mean, lesions_f1_mean
-
-
-# In[ ]:
-
-
-
 

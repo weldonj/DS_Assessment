@@ -3,7 +3,7 @@
 
 # # Overall Model Performance
 
-# In[1]:
+# In[4]:
 
 
 import pandas as pd
@@ -13,13 +13,13 @@ import matplotlib.pyplot as plt
 from functools import reduce
 
 
-# In[2]:
+# In[5]:
 
 
 data = pd.read_csv('L2 Data Scientist Assessment - Data.csv', dtype = str, encoding = 'cp1252')
 
 
-# In[3]:
+# In[6]:
 
 
 data['f1'] = data['f1'].astype(float)
@@ -30,7 +30,14 @@ tissue = data[data['class'] == 'Tissue']
 lesions = data[data['class'] == 'Lesions']
 
 
-# In[4]:
+# In[41]:
+
+
+tissue_absolute_best = tissue[['model','f1']].sort_values(by='f1',ascending=False).head(20)
+lesions_absolute_best = lesions[['model','f1']].sort_values(by='f1',ascending=False).head(20)
+
+
+# In[42]:
 
 
 tissue_models_mean = tissue.groupby('model').agg({'f1':'mean'}).reset_index()
@@ -38,7 +45,7 @@ background_models_mean = background.groupby('model').agg({'f1':'mean'}).reset_in
 lesions_models_mean = lesions.groupby('model').agg({'f1':'mean'}).reset_index()
 
 
-# In[5]:
+# In[43]:
 
 
 def plot(objects,performance,title):
@@ -55,16 +62,28 @@ def plot(objects,performance,title):
     plt.show()
 
 
-# In[7]:
+# In[44]:
 
 
 plot(list(background_models_mean['model']),list(background_models_mean['f1']),'Background Classification Performance')
 
 
-# In[6]:
+# In[45]:
 
 
 plot(list(tissue_models_mean['model']),list(tissue_models_mean['f1']),'Tissue Classification Performance')
+
+
+# In[47]:
+
+
+tissue_absolute_best
+
+
+# In[48]:
+
+
+lesions_absolute_best
 
 
 # In[8]:
