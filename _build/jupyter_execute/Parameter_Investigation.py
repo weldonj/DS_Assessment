@@ -41,7 +41,7 @@ def f1_group(df, param):
 
 # Loop through the parameters and show which model + parameter combinations scored highest
 
-# ## Parameter effect on Lesion Classification
+# # Parameter effect on Lesion Classification
 
 # In[28]:
 
@@ -62,7 +62,7 @@ for param in parameters:
 # 
 # 
 
-# ## Parameter effect on Tissue Classification
+# # Parameter effect on Tissue Classification
 
 # In[29]:
 
