@@ -8,6 +8,9 @@ parts:
 - caption: Overall Model Performance
   chapters:
   - file: Overall_Model_Performance.ipynb
+- caption: Parameter Investigation
+  chapters:
+  - file: Parameter_Investigation.ipynb
 - caption: Conclusion and Learning Outcomes
   chapters:
   - file: CONCLUSION
