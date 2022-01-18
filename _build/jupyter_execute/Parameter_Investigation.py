@@ -3,7 +3,7 @@
 
 # # Parameter Investigation
 
-# In[3]:
+# In[2]:
 
 
 import pandas as pd
@@ -23,7 +23,7 @@ lesions = data[data['class'] == 'Lesions']
 
 # Store a list of the model parameters
 
-# In[25]:
+# In[3]:
 
 
 parameters = ['dropoutFraction', 'augmentColor', 'augmentGeometry', 'balanceClasses', 'elasticDeform']
@@ -32,7 +32,7 @@ dfs = [background, tissue, lesions]
 
 # Function to group by Model and Parameter so we can compare the impact on f1 score
 
-# In[26]:
+# In[4]:
 
 
 def f1_group(df, param):
@@ -43,11 +43,11 @@ def f1_group(df, param):
 
 # # Parameter effect on Lesion Classification
 
-# In[28]:
+# In[8]:
 
 
 for param in parameters:
-    print(f'Effect of "{param}" on Lesion Classification\n'.split('=')[0])
+    print(f'Effect of "{param}" on Lesion Classification\n')
     print(f1_group(lesions, param))
     print()
 
@@ -64,14 +64,30 @@ for param in parameters:
 
 # # Parameter effect on Tissue Classification
 
-# In[29]:
+# In[9]:
 
 
 for param in parameters:
-    print(f'Effect of "{param}" on Tissue Classification\n'.split('=')[0])
+    print(f'Effect of "{param}" on Tissue Classification\n')
     print(f1_group(tissue, param))
     print()
 
+
+# The Optimal choices for all Parameters are the same for Tissue Classification as they were for Lesion Classification - This is a good outcome for us as it likely means we can use the same Classifier for both Lesion and Tissue Classification
+
+# # Parameter effect on Background Classification
+
+# In[10]:
+
+
+for param in parameters:
+    print(f'Effect of "{param}" on Tissue Classification\n')
+    print(f1_group(background, param))
+    print()
+
+
+# Background Classification appears to be best with a different model - AE_Xception
+# This should have a dropoutFraction of 0.2, augmentColor set to TRUE, augmentGeometry set to FALSE, balanceClasses set to TRUE and elasticDeform set to TRUE
 
 # In[ ]:
 

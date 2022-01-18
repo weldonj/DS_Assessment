@@ -3,7 +3,7 @@
 
 # # Overall Model Performance
 
-# In[4]:
+# In[71]:
 
 
 import pandas as pd
@@ -11,6 +11,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 from functools import reduce
+from scipy.stats.stats import pearsonr
 
 
 # In[5]:
@@ -28,13 +29,6 @@ data['accuracy'] = data['accuracy'].astype(float)
 background = data[data['class'] == 'Background']
 tissue = data[data['class'] == 'Tissue']
 lesions = data[data['class'] == 'Lesions']
-
-
-# In[41]:
-
-
-tissue_absolute_best = tissue[['model','f1']].sort_values(by='f1',ascending=False).head(20)
-lesions_absolute_best = lesions[['model','f1']].sort_values(by='f1',ascending=False).head(20)
 
 
 # In[42]:
@@ -74,6 +68,21 @@ plot(list(background_models_mean['model']),list(background_models_mean['f1']),'B
 plot(list(tissue_models_mean['model']),list(tissue_models_mean['f1']),'Tissue Classification Performance')
 
 
+# In[8]:
+
+
+plot(list(lesions_models_mean['model']),list(lesions_models_mean['f1']),'Lesions Classification Performance')
+
+
+# Getting the absolute top performers to ensure that there aren't some outlying excellnt results for other models
+
+# In[41]:
+
+
+tissue_absolute_best = tissue[['model','f1']].sort_values(by='f1',ascending=False).head(20)
+lesions_absolute_best = lesions[['model','f1']].sort_values(by='f1',ascending=False).head(20)
+
+
 # In[47]:
 
 
@@ -86,11 +95,49 @@ tissue_absolute_best
 lesions_absolute_best
 
 
-# In[8]:
+# In[85]:
 
 
-plot(list(lesions_models_mean['model']),list(lesions_models_mean['f1']),'Lesions Classification Performance')
+ti = list(tissue[tissue['model'] == 'Seg_Model'].sort_values(by='classifier')['f1'].dropna())
 
+
+# In[86]:
+
+
+le = list(lesions[lesions['model'] == 'Seg_Model'].sort_values(by='classifier')['f1'].dropna())
+
+
+# In[98]:
+
+
+fig = plt.figure(figsize=(10.5,6))
+fig.suptitle('Seg_Model Tissue and Lesion Correlation', fontsize=20)
+plt.xlabel('Lesion Classification Performance')
+plt.ylabel('Tissue Classification Performance')
+plt.xlim(0.25,0.85)
+plt.ylim(0.93,0.985)
+plt.scatter(le, ti)
+
+
+# In[87]:
+
+
+correlation, p_value = pearsonr(le, ti)
+
+
+# In[88]:
+
+
+correlation
+
+
+# In[99]:
+
+
+p_value
+
+
+# Correlation greater than 0.8 with a P-Value well below 0.05 indicates a true, strong, positive correlation 
 
 # In[ ]:
 
