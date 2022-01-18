@@ -56,11 +56,17 @@ def plot(objects,performance,title):
     plt.show()
 
 
+# ## Background Pixel Classification
+
 # In[44]:
 
 
 plot(list(background_models_mean['model']),list(background_models_mean['f1']),'Background Classification Performance')
 
+
+# AE_Xception has the highest average performance for Background Pixel Classification
+
+# ## Tissue Pixel Classification
 
 # In[45]:
 
@@ -68,13 +74,19 @@ plot(list(background_models_mean['model']),list(background_models_mean['f1']),'B
 plot(list(tissue_models_mean['model']),list(tissue_models_mean['f1']),'Tissue Classification Performance')
 
 
+# Seg_Model has the highest average performance for Tissue Pixel Classification
+
+# ## Lesion Pixel Classification
+
 # In[8]:
 
 
 plot(list(lesions_models_mean['model']),list(lesions_models_mean['f1']),'Lesions Classification Performance')
 
 
-# Getting the absolute top performers to ensure that there aren't some outlying excellnt results for other models
+# Seg_Model also has the highest average performance for Lesion Pixel Classification
+
+# Now to get the absolute top performers to ensure that there aren't some outlying excellnt results for other models
 
 # In[41]:
 
@@ -94,6 +106,10 @@ tissue_absolute_best
 
 lesions_absolute_best
 
+
+# Looks good for both Tissue and Lesion, Seg_Model not only looks to be the highest average performer, but also makes up the top 20 absolute best performer for both Tissue and Lesion
+
+# Now to see if there is a correlation between the model's performance on these two Pixel types
 
 # In[85]:
 
@@ -137,7 +153,7 @@ correlation
 p_value
 
 
-# Correlation greater than 0.8 with a P-Value well below 0.05 indicates a true, strong, positive correlation 
+# Correlation greater than 0.8 with a P-Value well below 0.05 indicates a true, strong, positive correlation, indicating that this is likely a good choice of model for both Tissue and Lesion Classification
 
 # In[ ]:
 
