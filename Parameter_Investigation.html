@@ -51,7 +51,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Conclusion" href="CONCLUSION.html" />
     <link rel="prev" title="Overall Model Performance" href="Overall_Model_Performance.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -129,18 +128,6 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Parameter Investigation
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Conclusion and Recommendations
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CONCLUSION.html">
-   Conclusion
   </a>
  </li>
 </ul>
@@ -246,6 +233,11 @@
    Parameter effect on Tissue Classification
   </a>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-background-classification">
+   Parameter effect on Background Classification
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -279,6 +271,11 @@
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameter-effect-on-tissue-classification">
    Parameter effect on Tissue Classification
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-effect-on-background-classification">
+   Parameter effect on Background Classification
   </a>
  </li>
 </ul>
@@ -336,7 +333,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Lesion Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Lesion Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">f1_group</span><span class="p">(</span><span class="n">lesions</span><span class="p">,</span> <span class="n">param</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
@@ -450,7 +447,7 @@ Effect of &quot;elasticDeform&quot; on Lesion Classification
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Tissue Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Tissue Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">f1_group</span><span class="p">(</span><span class="n">tissue</span><span class="p">,</span> <span class="n">param</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
@@ -554,6 +551,119 @@ Effect of &quot;elasticDeform&quot; on Tissue Classification
 </div>
 </div>
 </div>
+<p>The Optimal choices for all Parameters are the same for Tissue Classification as they were for Lesion Classification - This is a good outcome for us as it likely means we can use the same Classifier for both Lesion and Tissue Classification</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="parameter-effect-on-background-classification">
+<h1>Parameter effect on Background Classification<a class="headerlink" href="#parameter-effect-on-background-classification" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of &quot;</span><span class="si">{</span><span class="n">param</span><span class="si">}</span><span class="s1">&quot; on Tissue Classification</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f1_group</span><span class="p">(</span><span class="n">background</span><span class="p">,</span> <span class="n">param</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Effect of &quot;dropoutFraction&quot; on Tissue Classification
+
+            model dropoutFraction        f1
+0        AE_FCN16               0  0.927050
+6  AE_InceptionV3             0.2  0.926828
+1        AE_FCN16             0.2  0.925197
+8     AE_Xception             0.2  0.924663
+5  AE_InceptionV3               0  0.923322
+4    AE_Inception             0.2  0.915050
+9   DeepLabV3Plus             0.2  0.907022
+3         AE_FCN8             0.2  0.898187
+7     AE_ResNet50             0.2  0.873933
+2         AE_FCN8               0  0.594618
+
+Effect of &quot;augmentColor&quot; on Tissue Classification
+
+             model augmentColor        f1
+11     AE_Xception         TRUE  0.930354
+15       Seg_Model         TRUE  0.929685
+7   AE_InceptionV3         TRUE  0.929154
+1         AE_FCN16         TRUE  0.928204
+6   AE_InceptionV3        FALSE  0.924889
+10     AE_Xception        FALSE  0.924724
+3          AE_FCN8         TRUE  0.922931
+4     AE_Inception        FALSE  0.921635
+0         AE_FCN16        FALSE  0.921357
+14       Seg_Model        FALSE  0.915316
+8      AE_ResNet50        FALSE  0.911441
+12   DeepLabV3Plus        FALSE  0.910352
+5     AE_Inception         TRUE  0.908465
+13   DeepLabV3Plus         TRUE  0.895369
+9      AE_ResNet50         TRUE  0.855079
+2          AE_FCN8        FALSE  0.841087
+
+Effect of &quot;augmentGeometry&quot; on Tissue Classification
+
+             model augmentGeometry        f1
+10     AE_Xception           FALSE  0.928501
+7   AE_InceptionV3            TRUE  0.928457
+11     AE_Xception            TRUE  0.926980
+0         AE_FCN16           FALSE  0.926027
+6   AE_InceptionV3           FALSE  0.925619
+1         AE_FCN16            TRUE  0.924676
+15       Seg_Model            TRUE  0.924455
+4     AE_Inception           FALSE  0.919121
+8      AE_ResNet50           FALSE  0.918270
+14       Seg_Model           FALSE  0.910606
+12   DeepLabV3Plus           FALSE  0.907506
+13   DeepLabV3Plus            TRUE  0.906418
+5     AE_Inception            TRUE  0.902836
+2          AE_FCN8           FALSE  0.881624
+3          AE_FCN8            TRUE  0.880100
+9      AE_ResNet50            TRUE  0.841287
+
+Effect of &quot;balanceClasses&quot; on Tissue Classification
+
+             model balanceClasses        f1
+14       Seg_Model          FALSE  0.932789
+1         AE_FCN16           TRUE  0.932255
+11     AE_Xception           TRUE  0.931525
+5     AE_Inception           TRUE  0.930616
+7   AE_InceptionV3           TRUE  0.928509
+6   AE_InceptionV3          FALSE  0.920917
+15       Seg_Model           TRUE  0.917161
+10     AE_Xception          FALSE  0.916386
+9      AE_ResNet50           TRUE  0.914309
+13   DeepLabV3Plus           TRUE  0.911402
+4     AE_Inception          FALSE  0.909861
+2          AE_FCN8          FALSE  0.909476
+0         AE_FCN16          FALSE  0.908585
+12   DeepLabV3Plus          FALSE  0.898264
+3          AE_FCN8           TRUE  0.869385
+8      AE_ResNet50          FALSE  0.804560
+
+Effect of &quot;elasticDeform&quot; on Tissue Classification
+
+             model elasticDeform        f1
+1         AE_FCN16          TRUE  0.933024
+11     AE_Xception          TRUE  0.931815
+5     AE_Inception          TRUE  0.930616
+6   AE_InceptionV3         FALSE  0.926745
+7   AE_InceptionV3          TRUE  0.926582
+10     AE_Xception         FALSE  0.925476
+14       Seg_Model         FALSE  0.925371
+0         AE_FCN16         FALSE  0.922192
+3          AE_FCN8          TRUE  0.918840
+9      AE_ResNet50          TRUE  0.913958
+13   DeepLabV3Plus          TRUE  0.910381
+4     AE_Inception         FALSE  0.909861
+12   DeepLabV3Plus         FALSE  0.904335
+15       Seg_Model          TRUE  0.900958
+8      AE_ResNet50         FALSE  0.872667
+2          AE_FCN8         FALSE  0.858385
+</pre></div>
+</div>
+</div>
+</div>
+<p>Background Classification appears to be best with a different model - AE_Xception
+This should have a dropoutFraction of 0.2, augmentColor set to TRUE, augmentGeometry set to FALSE, balanceClasses set to TRUE and elasticDeform set to TRUE</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -587,13 +697,6 @@ Effect of &quot;elasticDeform&quot; on Tissue Classification
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Overall Model Performance</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="CONCLUSION.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conclusion</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
